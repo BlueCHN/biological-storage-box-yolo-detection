@@ -1,0 +1,61 @@
+# ==== Python 构建产物 ====
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+*.spec
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# ==== 训练/缓存产物（排除 runs，但保留训练权重）====
+runs/**
+!runs/**/
+!runs/**/weights/
+!runs/**/weights/*.pt
+*.cache
+*.tmp
+*.log
+
+# ==== 推理输出（标注图、坐标文件等，可再生）====
+检测结果yolo/
+**/检测结果*/
+*_yolo标注.png
+*_yolo坐标.csv
+*_yolo坐标.json
+yolo汇总.json
+
+# ==== 图片/视频等大文件（数据集图片、标注图、实拍素材均不入库）====
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.gif
+*.webp
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+
+# ==== 大体积压缩包（Roboflow 原始 zip 等，解压后标签/配置仍入库）====
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# ==== 例外：模型权重必须上传 ====
+!*.pt
+!*.onnx
+
+# ==== 系统文件 ====
+Thumbs.db
+desktop.ini
+.DS_Store
